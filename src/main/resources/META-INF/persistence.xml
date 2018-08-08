@@ -24,6 +24,9 @@
         <description>Hibernate JPA Configuration Example HSQLDB</description>
         <class>com.nayakam.tutorial.hibernate.model.Person</class>
         <class>com.nayakam.tutorial.hibernate.model.Student</class>
+        <class>com.nayakam.tutorial.hibernate.model.MainEntity</class>
+        <class>com.nayakam.tutorial.hibernate.model.DependentEntity</class>
+        <class>com.nayakam.tutorial.hibernate.model.OwnedEntity</class>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
             <!--
