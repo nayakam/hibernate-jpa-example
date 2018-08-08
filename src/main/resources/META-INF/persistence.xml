@@ -1,0 +1,72 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+    <!--
+        <persistence-unit name="PERSISTENCE-MYSQL">
+            <description>Hibernate JPA Configuration Example MySql</description>
+            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+            <properties>
+                <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hibernatejpaexample"/>
+                <property name="javax.persistence.jdbc.user" value="root"/>
+                <property name="javax.persistence.jdbc.password" value="admin"/>
+                <property name="hibernate.show_sql" value="false"/>
+                <property name="hibernate.hbm2ddl.auto" value="update"/>
+            </properties>
+
+        </persistence-unit>
+        -->
+
+    <persistence-unit name="PERSISTENCE-HSQLDB" transaction-type="RESOURCE_LOCAL">
+        <description>Hibernate JPA Configuration Example HSQLDB</description>
+        <class>com.nayakam.tutorial.hibernate.model.Person</class>
+        <class>com.nayakam.tutorial.hibernate.model.Student</class>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--
+            <property name="hibernate.ejb.naming_strategy" value="com.nayakam.tutorial.hibernate.util.OracleNamingStrategy"/>
+
+
+
+            <property name="hibernate.implicit_naming_strategy" value="org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl"/>
+            <property name="hibernate.implicit_naming_strategy" value="org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl"/>
+            <property name="hibernate.implicit_naming_strategy" value="org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl"/>
+            <property name="hibernate.implicit_naming_strategy" value="org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl"/>
+
+            <property name="hibernate.physical_naming_strategy" value="org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl"/>
+            <property name="hibernate.physical_naming_strategy" value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV1"/>
+            <property name="hibernate.physical_naming_strategy" value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV2"/>
+            <property name="hibernate.physical_naming_strategy" value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV3"/>
+
+            -->
+            <property name="hibernate.show_sql" value="true"/>
+
+            <!-- HSQL -->
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:hibernatejpaexample"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.current_session_context_class" value="thread"/>
+        </properties>
+    </persistence-unit>
+
+    <!--
+    <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
+    <class>com.test.jpa.Student</class>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+      <property name="javax.persistence.jdbc.url"    value="jdbc:hsqldb:mem:test" />
+      <property name="javax.persistence.jdbc.user" value="sa" />
+      <property name="javax.persistence.jdbc.password" value="" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+      <property name="show_sql" value="true"/>
+      <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+    </properties>
+  </persistence-unit>
+    -->
+
+</persistence>
