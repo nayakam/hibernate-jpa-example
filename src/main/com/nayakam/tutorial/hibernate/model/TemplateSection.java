@@ -14,15 +14,6 @@ public class TemplateSection extends BaseEntity {
     private String name;
 
     @Column(nullable = false)
-    private String displayName;
-
-    @Column(length = 2000)
-    private String description;
-
-    private int displayOrder;
-
-
-    @Column(nullable = false)
     private String fieldGroupKey;
 
     /**
@@ -49,30 +40,6 @@ public class TemplateSection extends BaseEntity {
         this.name = name;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getDisplayOrder() {
-        return displayOrder;
-    }
-
-    public void setDisplayOrder(int displayOrder) {
-        this.displayOrder = displayOrder;
-    }
-
     public String getFieldGroupKey() {
         return fieldGroupKey;
     }
@@ -87,5 +54,15 @@ public class TemplateSection extends BaseEntity {
 
     public void setFields(List<TemplateField> fields) {
         this.fields = fields;
+    }
+
+    @Override
+    public String toString() {
+        return "TemplateSection{" +
+                "template=" + template +
+                ", name='" + name + '\'' +
+                ", fieldGroupKey='" + fieldGroupKey + '\'' +
+                ", fields=" + fields +
+                "} " + super.toString();
     }
 }

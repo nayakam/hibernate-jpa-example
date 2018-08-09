@@ -29,6 +29,8 @@
         <class>com.nayakam.tutorial.hibernate.model.DependentEntity</class>
         <class>com.nayakam.tutorial.hibernate.model.OwnedEntity</class>
         -->
+        <class>com.nayakam.tutorial.hibernate.model.DomainType</class>
+        <class>com.nayakam.tutorial.hibernate.model.DomainAspect</class>
         <class>com.nayakam.tutorial.hibernate.model.TemplateField</class>
         <class>com.nayakam.tutorial.hibernate.model.Template</class>
         <class>com.nayakam.tutorial.hibernate.model.TemplateSection</class>
@@ -55,6 +57,7 @@
             <property name="hibernate.physical_naming_strategy"
                       value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV2"/>
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
 
             <!-- HSQL -->
             <property name="javax.persistence.jdbc.user" value="sa"/>

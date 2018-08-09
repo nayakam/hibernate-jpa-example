@@ -18,16 +18,10 @@ public class TemplateField extends BaseEntity {
     @Column(length = 500)
     private String displayName;
 
-    private Integer displayOrder;
-
-    @Column(length = 2000)
-    private String description;
-
     @Enumerated(EnumType.STRING)
     @Column(length = 16)
     private PackageFieldType fieldType;
 
-    private String defaultFieldValue;
 
     public String getName() {
         return name;
@@ -53,22 +47,6 @@ public class TemplateField extends BaseEntity {
         this.displayName = displayName;
     }
 
-    public Integer getDisplayOrder() {
-        return displayOrder;
-    }
-
-    public void setDisplayOrder(Integer displayOrder) {
-        this.displayOrder = displayOrder;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public PackageFieldType getFieldType() {
         return fieldType;
     }
@@ -77,11 +55,13 @@ public class TemplateField extends BaseEntity {
         this.fieldType = fieldType;
     }
 
-    public String getDefaultFieldValue() {
-        return defaultFieldValue;
-    }
-
-    public void setDefaultFieldValue(String defaultFieldValue) {
-        this.defaultFieldValue = defaultFieldValue;
+    @Override
+    public String toString() {
+        return "TemplateField{" +
+                "name='" + name + '\'' +
+                ", groupKey='" + groupKey + '\'' +
+                ", displayName='" + displayName + '\'' +
+                ", fieldType=" + fieldType +
+                "} " + super.toString();
     }
 }

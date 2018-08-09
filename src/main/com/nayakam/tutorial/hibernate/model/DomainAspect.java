@@ -1,30 +1,21 @@
 package com.nayakam.tutorial.hibernate.model;
 
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "DOMAIN_ASPECT")
-public class DomainAspect implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class DomainAspect extends BaseEntity {
 
     private String name;
 
-    private String displayName;
-
+    @ManyToOne
+    private DomainType domainType;
 
     @ManyToOne
     private TemplateSection sectionTemplate;
-
-    private boolean hideOnCreate;
-
-    private String tooltipText;
-
-    private Integer searchResultSize;
 
     public String getName() {
         return name;
@@ -34,14 +25,13 @@ public class DomainAspect implements Serializable {
         this.name = name;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public DomainType getDomainType() {
+        return domainType;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setDomainType(DomainType domainType) {
+        this.domainType = domainType;
     }
-
 
     public TemplateSection getSectionTemplate() {
         return sectionTemplate;
@@ -51,27 +41,12 @@ public class DomainAspect implements Serializable {
         this.sectionTemplate = sectionTemplate;
     }
 
-    public boolean isHideOnCreate() {
-        return hideOnCreate;
-    }
-
-    public void setHideOnCreate(boolean hideOnCreate) {
-        this.hideOnCreate = hideOnCreate;
-    }
-
-    public String getTooltipText() {
-        return tooltipText;
-    }
-
-    public void setTooltipText(String tooltipText) {
-        this.tooltipText = tooltipText;
-    }
-
-    public Integer getSearchResultSize() {
-        return searchResultSize;
-    }
-
-    public void setSearchResultSize(Integer searchResultSize) {
-        this.searchResultSize = searchResultSize;
+    @Override
+    public String toString() {
+        return "DomainAspect{" +
+                "name='" + name + '\'' +
+                ", domainType=" + domainType +
+                ", sectionTemplate=" + sectionTemplate +
+                "} " + super.toString();
     }
 }
