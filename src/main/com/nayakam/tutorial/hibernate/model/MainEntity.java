@@ -1,6 +1,7 @@
 package com.nayakam.tutorial.hibernate.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "mainTable")
-public class MainEntity {
+public class MainEntity implements Serializable {
     @Id
     private Long id;
 

@@ -27,6 +27,9 @@
         <class>com.nayakam.tutorial.hibernate.model.MainEntity</class>
         <class>com.nayakam.tutorial.hibernate.model.DependentEntity</class>
         <class>com.nayakam.tutorial.hibernate.model.OwnedEntity</class>
+        <class>com.nayakam.tutorial.hibernate.model.RwTemplateField</class>
+        <class>com.nayakam.tutorial.hibernate.model.RwTemplate</class>
+        <class>com.nayakam.tutorial.hibernate.model.RwTemplateSection</class>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
             <!--

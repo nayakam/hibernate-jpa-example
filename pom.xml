@@ -13,11 +13,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--
-        <hibernate.version>5.3.3.Final</hibernate.version> -->
+        <hibernate.version>5.3.3.Final</hibernate.version>
         <hibernate.version>5.2.17.Final</hibernate.version>
+            <hibernate.version>4.3.10.Final</hibernate.version>
+        -->
+        <hibernate.version>4.3.10.Final</hibernate.version>
         <hsqldb.version>2.4.1</hsqldb.version>
         <commons.lang3.version>3.7</commons.lang3.version>
         <hibernate-jpa-2.1-api.version>1.0.0.Final</hibernate-jpa-2.1-api.version>
+        <log.slf4j.version>1.7.21</log.slf4j.version>
     </properties>
 
     <dependencies>
@@ -54,6 +58,26 @@
         </dependency>
         -->
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>${log.slf4j.version}</version>
+      </dependency>
+     Using slf4j with Simple logger
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-simple</artifactId>
+          <version>${log.slf4j.version}</version>
+      </dependency>
+       -->
+
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.5</version>
@@ -71,7 +95,29 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>com.nayakam.tutorial.hibernate.MainApp</mainClass>
+                </configuration>
+                <!--
+                <executions>
+                    <execution>
+                        <id>MainApp</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.nayakam.tutorial.hibernate.MainApp</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+                -->
+            </plugin>
         </plugins>
     </build>
+
 
 </project>
