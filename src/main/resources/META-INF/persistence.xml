@@ -22,6 +22,7 @@
 
     <persistence-unit name="PERSISTENCE-HSQLDB" transaction-type="RESOURCE_LOCAL">
         <description>Hibernate JPA Configuration Example HSQLDB</description>
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.nayakam.tutorial.hibernate.model.Person</class>
         <class>com.nayakam.tutorial.hibernate.model.Student</class>
         <class>com.nayakam.tutorial.hibernate.model.MainEntity</class>
@@ -49,6 +50,7 @@
 
             -->
             <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.ejb.naming_strategy" value="com.nayakam.tutorial.hibernate.util.OracleNamingStrategy"/>
 
             <!-- HSQL -->
             <property name="javax.persistence.jdbc.user" value="sa"/>
