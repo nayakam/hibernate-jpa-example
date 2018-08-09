@@ -6,11 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class RwTemplate implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class Template extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -26,7 +22,7 @@ public class RwTemplate implements Serializable {
     private String variableName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "template")
-    private List<RwTemplateSection> sections = new ArrayList<>();
+    private List<TemplateSection> sections = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -68,11 +64,11 @@ public class RwTemplate implements Serializable {
         this.variableName = variableName;
     }
 
-    public List<RwTemplateSection> getSections() {
+    public List<TemplateSection> getSections() {
         return sections;
     }
 
-    public void setSections(List<RwTemplateSection> sections) {
+    public void setSections(List<TemplateSection> sections) {
         this.sections = sections;
     }
 
