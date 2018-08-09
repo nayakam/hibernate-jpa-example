@@ -41,7 +41,7 @@ public class RwTemplateSection implements Serializable {
      * directly, this is to avoid having a ManyToMany mapping table
      */
     @OneToMany
-    @JoinColumn(name = "group_key", referencedColumnName = "field_group_key", updatable = false, insertable = false)
+    @JoinColumn(name = "groupKey", referencedColumnName = "fieldGroupKey", updatable = false, insertable = false)
     private List<RwTemplateField> fields;
 
     private Boolean visible;
