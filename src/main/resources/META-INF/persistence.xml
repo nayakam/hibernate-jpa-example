@@ -69,6 +69,22 @@
         </properties>
     </persistence-unit>
 
+       <persistence-unit name="PERSISTENCE-MSSQL" transaction-type="RESOURCE_LOCAL">
+
+        <properties>
+            <!--
+              <property name="hibernate.hbm2ddl.auto" value="create"/>
+            -->
+
+            <property name="javax.persistence.jdbc.user" value="Navis_Write"/>
+            <property name="javax.persistence.jdbc.password" value="Navis_Write"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect "/>
+            <property name="hibernate.ejb.naming_strategy" value="com.regulationworks.core.util.dao.hibernate.OracleNamingStrategy"/>
+            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://proddev-sql.itree.com.au:1433;databaseName=RW_5X_CI_TS"/>
+        </properties>
+    </persistence-unit>
+
     <!--
     <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
     <class>com.test.jpa.Student</class>

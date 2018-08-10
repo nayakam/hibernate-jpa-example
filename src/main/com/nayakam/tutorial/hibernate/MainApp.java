@@ -59,14 +59,16 @@ public class MainApp {
 
     private static void loadDomainType(EntityManager entityManager) {
         CRUDBaseEntityExample crudBaseEntityExample = new CRUDBaseEntityExample(entityManager);
+        print(crudBaseEntityExample, TemplateSection.class);
         print(crudBaseEntityExample, Person.class);
         print(crudBaseEntityExample, Student.class);
-        crudBaseEntityExample.createBaseEntity(getTemplateField("GROUP_KEY"));
+
+        //  crudBaseEntityExample.createBaseEntity(getTemplateField("GROUP_KEY"));
 
         print(crudBaseEntityExample, TemplateField.class);
-        crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY"));
-        System.out.println("Field Details:" + crudBaseEntityExample.readAllBaseEntity(TemplateSection.class).get(0).getFields());
-        crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY_1"));
+        // crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY"));
+        //System.out.println("Field Details:" + crudBaseEntityExample.readAllBaseEntity(TemplateSection.class).get(0).getFields());
+        //crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY_1"));
         print(crudBaseEntityExample, TemplateSection.class);
 
     }
