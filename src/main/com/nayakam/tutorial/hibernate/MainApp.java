@@ -2,7 +2,10 @@ package com.nayakam.tutorial.hibernate;
 
 import com.nayakam.tutorial.hibernate.dao.CRUDBaseEntityExample;
 import com.nayakam.tutorial.hibernate.dao.CRUDPersonExample;
-import com.nayakam.tutorial.hibernate.model.*;
+import com.nayakam.tutorial.hibernate.model.PackageFieldType;
+import com.nayakam.tutorial.hibernate.model.Person;
+import com.nayakam.tutorial.hibernate.model.TemplateField;
+import com.nayakam.tutorial.hibernate.model.TemplateSection;
 import com.nayakam.tutorial.hibernate.util.JPAUtil;
 
 import javax.persistence.EntityManager;
@@ -60,22 +63,19 @@ public class MainApp {
     private static void loadDomainType(EntityManager entityManager) {
         CRUDBaseEntityExample crudBaseEntityExample = new CRUDBaseEntityExample(entityManager);
         print(crudBaseEntityExample, TemplateSection.class);
-        print(crudBaseEntityExample, Person.class);
-        print(crudBaseEntityExample, Student.class);
 
-        //  crudBaseEntityExample.createBaseEntity(getTemplateField("GROUP_KEY"));
-
+        crudBaseEntityExample.createBaseEntity(getTemplateField("GROUP_KEY"));
         print(crudBaseEntityExample, TemplateField.class);
-        // crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY"));
-        //System.out.println("Field Details:" + crudBaseEntityExample.readAllBaseEntity(TemplateSection.class).get(0).getFields());
-        //crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY_1"));
+
+        crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY"));
+        crudBaseEntityExample.createBaseEntity(getTemplateSection("GROUP_KEY1"));
         print(crudBaseEntityExample, TemplateSection.class);
 
     }
 
     private static void print(CRUDBaseEntityExample crudBaseEntityExample, Class entityClass) {
         List result = crudBaseEntityExample.readAllBaseEntity(entityClass);
-        System.out.println(result);
+        System.out.println(entityClass.getSimpleName() + " : " + result);
     }
 
     private static TemplateField getTemplateField(String groupKey) {
