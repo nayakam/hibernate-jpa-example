@@ -4,7 +4,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class JPAUtil {
-    //    private static final String PERSISTENCE_UNIT_NAME = "PERSISTENCE-HSQLDB";
+    //private static final String PERSISTENCE_UNIT_NAME = "PERSISTENCE-HSQLDB";
     private static final String PERSISTENCE_UNIT_NAME = "PERSISTENCE-MSSQL";
     private static EntityManagerFactory factory;
 

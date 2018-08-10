@@ -57,7 +57,7 @@
             <property name="hibernate.physical_naming_strategy"
                       value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV2"/>
             <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
 
             <!-- HSQL -->
             <property name="javax.persistence.jdbc.user" value="sa"/>
@@ -66,22 +66,30 @@
             <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:hibernatejpaexample"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
             <property name="hibernate.current_session_context_class" value="thread"/>
+
         </properties>
     </persistence-unit>
 
-       <persistence-unit name="PERSISTENCE-MSSQL" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="PERSISTENCE-MSSQL" transaction-type="RESOURCE_LOCAL">
 
         <properties>
             <!--
-              <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             -->
-
-            <property name="javax.persistence.jdbc.user" value="Navis_Write"/>
-            <property name="javax.persistence.jdbc.password" value="Navis_Write"/>
+            <property name="hibernate.implicit_naming_strategy"
+                      value="org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl"/>
+            <property name="hibernate.physical_naming_strategy"
+                      value="com.nayakam.tutorial.hibernate.util.PhysicalNamingStrategyImplV2"/>
+            <property name="javax.persistence.jdbc.user" value=""/>
+            <property name="javax.persistence.jdbc.password" value=""/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect "/>
-            <property name="hibernate.ejb.naming_strategy" value="com.regulationworks.core.util.dao.hibernate.OracleNamingStrategy"/>
+            <property name="hibernate.ejb.naming_strategy"
+                      value="com.regulationworks.core.util.dao.hibernate.OracleNamingStrategy"/>
             <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://proddev-sql.itree.com.au:1433;databaseName=RW_5X_CI_TS"/>
+            <property name="javax.persistence.jdbc.url"
+                      value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
         </properties>
     </persistence-unit>
 

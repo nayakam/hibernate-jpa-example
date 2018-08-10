@@ -20,8 +20,12 @@ public class TemplateSection extends BaseEntity {
      * The list of fields of this section is set by using the field group key, the fields list cannot be updated
      * directly, this is to avoid having a ManyToMany mapping table
      */
-    @OneToMany
-    @JoinColumn(name = "groupKey", referencedColumnName = "fieldGroupKey", updatable = false, insertable = false)
+//    @OneToMany
+//    @JoinColumn(name = "groupKey", referencedColumnName = "fieldGroupKey", updatable = false, insertable = false)
+//    private List<TemplateField> fields;
+
+    @ManyToMany
+    @JoinTable(name = "TEMPLATE_FIELD_MAP", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "field_group_key", table = "TEMPLATE_FIELD", referencedColumnName="groupKey"))
     private List<TemplateField> fields;
 
     public Template getTemplate() {
